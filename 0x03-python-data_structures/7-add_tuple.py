@@ -12,9 +12,5 @@ def add_tuple(tuple_a=(), tuple_b=()):
         d = tuple_b[1]
     else:
         0
-
-
     results = (a + c, b + d)
-
     return results
-
