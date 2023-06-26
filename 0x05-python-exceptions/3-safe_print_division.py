@@ -3,8 +3,6 @@ def safe_print_division(a, b):
     try:
         result = a / b
     except ZeroDivisionError:
-        :wq
-
         return None
     else:
         return result
