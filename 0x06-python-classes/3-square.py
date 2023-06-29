@@ -19,4 +19,4 @@ class Square:
         """
             set square square area"""
 
-           return self.__size ** 2
+        return self.__size ** 2
