@@ -5,7 +5,7 @@
 class Square:
     """creating square classs
         with conditional statements"""
-    def __init__(self, size = 0):
+    def __init__(self, size=0):
         """initialization"""
         if type(size) is not int:
             raise TypeError("size must be an intger")
