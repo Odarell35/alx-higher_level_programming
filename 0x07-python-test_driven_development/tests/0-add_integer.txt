@@ -1,0 +1,99 @@
+Module:`add_ integer``
+======================
+
+Testing the ``add_integer`` function
+
+----------------------
+
+Import
+>>> add_integer = __import__("0-add_integer").add_integer
+
+Check module Docstring
+>>> c = __import__("0-add_integer").__doc__
+>>> len(c) > 1
+True
+
+Normal Addition
+>>> add_integer(1, 2)
+3
+
+Add negative Number
+>>> add_integer(100, -2)
+98
+
+Add default Variable b= 98
+>>> add_integer(2)
+100
+
+No argument passed
+>>> add_integer()
+Traceback (most recent call last):
+...
+TypeError: No argument passed
+
+Add float
+>>> add_integer(100.3, -2)
+98
+
+Add both floats
+>>> add_integer(2.3, 2.5)
+4
+
+Add both negative number
+>>> add_integer(-2.9, -0.2)
+-2
+
+Add a not int variable for b
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+Testing  not int variable for a
+>>> add_integer("school", 10)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+Only one arguments passed
+>>> add_integer(2, )
+2
+
+Only one arguments passed
+>>> add_integer( ,2)
+2
+Add strings
+>>> add_integer("hello", "there")
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+Add more than 2 args
+>>> add_integer(5, 2, 3)
+Traceback (most recent call last):
+...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Testing float  overflow
+>>> add_integer(2, float('inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+Testing float  overflow
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+Addition with NaN
+>>> add_integer(2, float('nan'))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
+
+Addition with NaN
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
