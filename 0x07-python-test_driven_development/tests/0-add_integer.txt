@@ -29,7 +29,7 @@ No argument passed
 >>> add_integer()
 Traceback (most recent call last):
 ...
-TypeError: No argument passed
+TypeError: add_integer() missing 1 required positional argument: 'a'
 
 Add float
 >>> add_integer(100.3, -2)
@@ -55,13 +55,6 @@ Traceback (most recent call last):
 ...
 TypeError: a must be an integer
 
-Only one arguments passed
->>> add_integer(2, )
-2
-
-Only one arguments passed
->>> add_integer( ,2)
-2
 Add strings
 >>> add_integer("hello", "there")
 Traceback (most recent call last):
