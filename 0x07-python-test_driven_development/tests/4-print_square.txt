@@ -1,0 +1,95 @@
+
+Module:` print__square`
+==================
+Test cases for the print_square() function
+===========================
+
+Import
+>>> print_square= __import__('4-print_square').print_square
+
+Check module docstring
+>>> c = __import__('4-print_square').__doc__
+>>> len(c) > 1
+True
+
+Test case 1: Normal functionality 
+>>> print_square(4)
+####
+####
+####
+####
+
+Test case: large size
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+test case: small size
+>>> print_square(1)
+#
+
+Test case 2: when float is passed
+>>> print_square(2.5)
+Trackback (most recent call last):
+TypeError: size must be an integer
+
+Test case 3: when string is passed
+>>> print_square("two by three")
+Trackback (most recent call last):
+TypeError: size must be an integer
+
+Test case 4: when list is passed
+>>> print_square([1, 2, 3, 4])
+Trackback (most recent call last):
+TypeError: size must be an integer
+
+Test case 5: when tuple is passed
+>>> print_square((2, 3))
+Trackback (most recent call last):
+TypeError: size must be an integer
+
+Test case 6: when complex  is passed
+>>> print_square(2 + 6j)
+Trackback (most recent call last):
+TypeError: size must be an integer
+
+Test case 7: when dict is passed
+>>> print_square({'name':" lerato", 'age': 25})
+Trackback (most recent call last):
+TypeError: size must be an integer
+
+Test case 8: when Boolean is passed
+>>> print_square(True)
+Trackback (most recent call last):
+TypeError: size must be an integer
+
+Test case 9: when is passed
+>>> print_square(None)
+Trackback (most recent call last):
+TypeError: size must be an integer
+
+Test case 10: when negative is passed
+>>> print_square(-1)
+Trackback (most recent call last):
+ValueError: size must be >= 0
+
+Test case 11: when negative float is passed
+>>> print_square(-4.2)
+Trackback (most recent call last):
+TypeError: size must be an integer
+
+Test case 12: when size = 0
+>>> print_square(0)
+
+Test case: no argument passed
+>>> print_square()
+Traceback (most recent call last):
+TypeError: print_square() missing 1 required positional argument: 'size'
