@@ -65,7 +65,10 @@ class Rectangle:
             rec = ""
             for i in range(self.height):
                 rec += "#" * self.width + "\n"
-            return rec
+            return (rec)[:-1]
 
     def __repr__(self):
-        return f"Rectangle({self.width}, {self.height})"
+        """prints string representation of the rectangle
+        to be able to recreate a new instance by using eval()
+        """
+        return f"Rectangle({self.__width}, {self.__height})"
