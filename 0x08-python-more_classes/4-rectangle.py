@@ -65,4 +65,7 @@ class Rectangle:
             rec = ""
             for i in range(self.height):
                 rec += "#" * self.width + "\n"
-            return (rec)[:-1]
+            return rec
+
+    def __repr__(self):
+        return f"Rectangle({self.width}, {self.height})"
