@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """My name is <first name> <last name>"""
+
+
 def say_my_name(first_name, last_name=""):
     """
     Check if the argument is string
@@ -12,4 +14,3 @@ def say_my_name(first_name, last_name=""):
 
     else:
         print("My name is {} {}".format(first_name, last_name))
-

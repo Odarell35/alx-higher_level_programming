@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """divides matrix"""
+
+
 def matrix_divided(matrix, div):
     """
     Check if matrix is made up of  integers/floats
@@ -26,4 +28,3 @@ def matrix_divided(matrix, div):
 
     new_matrix = [[round(element / div, 2) for element in row] for row in matrix]
     return new_matrix
-
