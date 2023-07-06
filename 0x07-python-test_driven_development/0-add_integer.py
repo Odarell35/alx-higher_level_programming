@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """ Addition Module"""
 
+
 def add_integer(a, b=98):
-    """Add two numbers int or float 
+    """Add two numbers int or float
     raise errors where expected
     return a + b
     """
