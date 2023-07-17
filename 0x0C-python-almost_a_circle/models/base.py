@@ -31,7 +31,7 @@ class Base:
 		with open (cls.__name__ + ".json", mode= "w", encoding="utf-8") as myfile:
 			if list_objs:
 				for objs in list_objs:
-					empty_list.append(obj.to_dictionary())
+					empty_list.append(objs.to_dictionary())
 			myfile.write(cls.to_json_string(empty_list))
 	@staticmethod
 	def from_json_string(json_string):
@@ -49,4 +49,14 @@ class Base:
 		if cls.__name__ == 'Square':
 			a = cls(1)
 		a.update(**dictionary)
-		return a 
+		return a
+
+	@classmethod
+	def load_from_file(cls):
+		"""returns a list of instances:"""
+		try:
+			with open(cls.__name__ + ".json", mode= "r", encoding="utf-8") as myfile:
+				return [cls.create(**dictionary) for
+					dictionary in cls.from_json_string(myfile.read())]
+		except FileNotFoundError:
+			return []
