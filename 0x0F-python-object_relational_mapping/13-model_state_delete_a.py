@@ -10,15 +10,15 @@ if __name__ == "__main__":
     username, password, database_name = sys.argv[1], sys.argv[2], sys.argv[3]
 
     # Create an SQLAlchemy engine and session
-    engine = create_engine(f'mysql://{username}:{password}@localhost:3306/{database_name}', pool_pre_ping=True)
+    engine = create_engine(f'mysql://{username}:{password}@localhost:3306/{database_name}')
     session = Session(engine)
 
     # Query for all State objects and sort by states.id
-    states = session.query(State).order_by(State.id).all()
+    state_delete = session.query(State).filter(State.name.like('%a%'))
 
     # Display the results
-    for state in states:
-        print(f"{state.id}: {state.name}")
-
+    for state in state_delete:
+        session.delete(state)
+    session.commit()
     # Close the session
     session.close()
