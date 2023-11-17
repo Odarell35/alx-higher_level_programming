@@ -14,8 +14,7 @@ def state_name():
                                port=3306)
     c = database.cursor()
     name_search = sys.argv[4]
-    query = "SELECT * FROM states WHERE name LIKE %s ORDER BY states.id ASC"
-    c.execute(query, (f'%{name_search}%',))
+    c.execute("SELECT * FROM states WHERE name='{}' ORDER BY states.id ASC".format(name_search))
     row = c.fetchall()
     for rr in row:
         print(rr)
