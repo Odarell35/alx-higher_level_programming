@@ -5,7 +5,7 @@ import sys
 import sqlalchemy
 from model_state import Base, State
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 
 
 def all_state(State):
@@ -14,13 +14,16 @@ def all_state(State):
     password = sys.argv[2]
     database_name = sys.argv[3]
     
-      engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(username, password, database_name), pool_pre_ping=True)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(username, password, database_name), pool_pre_ping=True)
     s = Session(engine)
-    for i in s.query(State).order_by(states.id).all():
-        print(i.id, i.name)
+    result =  s.query(State).order_by(State.id).first()
+    if result is None:
+        print("Nothing")
+    else:
+        print(f"{result.id}: {result.name}")
     s.close()
 
 
 if __name__ == "__main__":
-    all_state()
+    all_state(State)
 
