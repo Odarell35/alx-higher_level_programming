@@ -2,19 +2,21 @@
 
 const request = require('request');
 const apiUrl = process.argv[2];
-const characterId = '18'; // Wedge Antilles' character ID
+let c = 0;
 
 request(apiUrl, function (error, response, body) {
-	if (error) {
-	console.error(error);
-	return;
-	}
+  if (error) {
+    console.error(error);
+    return;
+  }
 
-	const filmsData = JSON.parse(body).results;
-	console.log(filmsData.reduce(count, movie) => {
-		return movie.characters.find((character) => character.endsWith('/18/'))
-		? count + 1
-		: count;
-	}, 0);
-
+  const filmsData = JSON.parse(body).results;
+  filmsData.forEach((film) => {
+    film.characters.forEah((character) => {
+      if (character.includes('18')) {
+        c += 1;
+      }
+    });
+  });
+  console.log(c);
 });
